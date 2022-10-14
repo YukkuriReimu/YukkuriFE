@@ -1,0 +1,459 @@
+<html>
+
+<head>
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    div#marisa {
+      position: fixed;
+      top:0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(200, 200, 200, 0.7);
+      display: flex;
+      vertical-align: bottom;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+
+
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    window.onload = function () {
+      var mermaidAPI = mermaid.mermaidAPI;
+      var config = {
+        startOnLoad: false,
+        htmlLabels: true,
+        callback: function (id) {
+          console.log(id, ' rendered');
+        },
+        flowchart: {
+          useMaxWidth: false,
+        }
+      };
+      mermaid.initialize(config);
+      var element = document.getElementById("yukkuriFE");
+      var insertSvg = function (svgCode, bindFunctions) {
+        element.innerHTML = svgCode;
+      };
+      var graphDefinition = `
+    graph TD
+
+    010101(` + getImgTag('FVn-HxkH7P8') + `FE試験合格)
+    B[午前試験対策]
+    C[午後問題練習]
+    010102(` + getImgTag('yBODVCVHj5o') + `2進数と16進数)
+    010103(` + getImgTag('RM6OPSV61mM') + `2進数_負の数)
+    010104(` + getImgTag('xLSHY6wcyok') + `2進数_小数)
+    010105(` + getImgTag('nhOOBVj_bLA') + `2進数_計算誤差)
+    010106(` + getImgTag('QBdVNnL0UEk') + `論理演算 シフト演算)
+    010107(` + getImgTag('6bibng5YB6A') + `符号化)
+    010108(` + getImgTag('wwrWLs49C7w') + `応用数学)
+    010410(` + getImgTag('639t3EPVe_o') + `論理回路)
+
+    010201(` + getImgTag('gMO1UsFUvoo') + `流れ図)
+    010202(` + getImgTag('XXPLjAhdQvA') + `スタック<br />キュー)
+    010203(` + getImgTag('ylVKqBvoKA4') + `ポインタ)
+    010204(` + getImgTag('y2DOHTXfXUE') + `2分探索木)
+    010205(` + getImgTag('9qghz_NltIc') + `逆ポーランド記法)
+    010206(` + getImgTag('0ChTmwYqIQw') + `線形探索<br />2分探索)
+    010207(` + getImgTag('MTAiT-ycgIM') + `ハッシュ表探索)
+    010208(` + getImgTag('497ei5WkiXw') + `挿入ソート<br />選択ソート<br />バブルソート)
+    010209(` + getImgTag('JiCrnNoGeKM') + `クイックソート)
+    010210(` + getImgTag('V_fsEkFqF34') + `再帰関数)
+
+    010301(` + getImgTag('nxmNrlG5rwU') + `コンピュータの5大装置)
+    010302(` + getImgTag('wqsSGWeJ7Nc') + `パイプライン制御)
+    010303(` + getImgTag('CkXa64cmFKI') + `アドレス指定方式<br />機械語命令)
+    010304(` + getImgTag('F-X6O4Dmhlg') + `外部割込み<br />内部割込み)
+    010305(` + getImgTag('LGP5JLpkuXw') + `CPUの性能)
+    010306(` + getImgTag('2BWyy_QqfDc') + `ROMとRAM)
+    010307(` + getImgTag('c8CWFZhu63Q') + `キャッシュメモリ)
+    010308(` + getImgTag('kN2zCAYH4Uc') + `RAID)
+    010309(` + getImgTag('GQW2FHej-0Y') + `HDDのアクセス時間)
+    010310(` + getImgTag('Z6LVinwBZkA') + `入出力装置<br />デバイス)
+
+    010401(` + getImgTag('PBOyab7ofuE') + `オペレーティングシステム)
+    010402(` + getImgTag('IKeWadFzOnE') + `タスク管理の3つの状態)
+    010403(` + getImgTag('eHXQ2I3i3GM') + `タスクのスケジューリングアルゴリズム)
+    010404(` + getImgTag('o6ISLs4kmPQ') + `実記憶管理)
+    010405(` + getImgTag('B2VWhhhzTX4') + `仮想記憶管理)
+    010406(` + getImgTag('NepbjqiypEA') + `ジョブ)
+    010407(` + getImgTag('NIZ86b7PkeQ') + `ファイルシステム)
+    010408(` + getImgTag('qIjxV-rxgcI') + `プログラミング言語)
+    010409(` + getImgTag('-8vDuk3HOEo') + `言語プロセッサ)
+
+    010501(` + getImgTag('5lWzg4Vtmy4') + `RASIS<br />MTBF<br />MTTR)
+    010502(` + getImgTag('BBaaKQmFsLc') + `システムの稼働率)
+    010503(` + getImgTag('cYqaKNRoI-0') + `高信頼化技術<br />フォールトトレランス<br />フォールトアボイダンス)
+
+    010601(` + getImgTag('Q6TLHNNpRjw') + `関係データベース)
+    010602(` + getImgTag('t2-qZpXYRrc') + `E-R図)
+    010603(` + getImgTag('t0zPAh4zUyE') + `正規化)
+    010604(` + getImgTag('esv5Y8vhvqo') + `関係演算<br />集合演算)
+    010605(` + getImgTag('wIxThUYOh-E') + `SELECT文)
+    010606(` + getImgTag('BGzfCDLREfo') + `グループ集計<br />副問合せ)
+    010607(` + getImgTag('CLqiCJ8FWQc') + `トランザクション処理<br />DBMS)
+    010608(` + getImgTag('UpsnVFLywqE') + `DBのロック)
+    010609(` + getImgTag('--T1-_rhEl0') + `ロールフォワード<br />ロールバック)
+
+    010701(` + getImgTag('-S40jAqt0Pg') + `OSI基本参照モデル)
+    010702(` + getImgTag('839bzfRS7IU') + `データの伝送効率<br />誤り検出)
+    010703(` + getImgTag('Xu36CzNoHAo') + `MACアドレス<br />ハブ)
+    010704(` + getImgTag('N0IYkMbbP08') + `アクセス制御手順)
+    010705(` + getImgTag('ZgcmNPxdR5s') + `IPアドレス<br />サブネットマスク)
+    010706(` + getImgTag('fqmyalpAhrc') + `アドレス変換<br />DHCP)
+    010707(` + getImgTag('dGICwXc5f0Y') + `ルーティング)
+    010708(` + getImgTag('KcW9fzmS96g') + `TCPとUDP<br />ポート番号)
+    010709(` + getImgTag('CCIokIPCpoM') + `プロトコル<br />DNS)
+
+    010801(` + getImgTag('wi5te5RLMRI') + `情報セキュリティのCIA<br />代表的な組織)
+    010802(` + getImgTag('bDtXJiX-SE8') + `共通鍵暗号方式<br />公開鍵暗号方式)
+    010803(` + getImgTag('eRnbDxK05y0') + `エンティティ認証)
+    010804(` + getImgTag('XIc6n06l3GA') + `メッセージ認証<br />ディジタル署名)
+    010805(` + getImgTag('1S9EyDDBCEY') + `ファイアウォール)
+    010806(` + getImgTag('HnOU32BuR1o') + `マルウェア)
+    010807(` + getImgTag('VW60OfNuGZg') + `サイバー攻撃)
+
+    019901(` + getImgTag('1KTuZD9qeTI') + `FE試験は取得すべき?)
+    019902(` + getImgTag('RMayzGbXY5o') + `FE試験の勉強方法)
+    019903(` + getImgTag('G0BUMJNrreM') + `午後の選択問題の選び方)
+    019904(` + getImgTag('6AeEMSz3hF4') + `難しい問題に遭遇したら<br />午前問題編)
+    019905(` + getImgTag('PufJsCwWou8') + `テクノロジ系の勉強だけで<br />合格したい!)
+
+    018001(` + getImgTag('SeN1-5kGf3c') + `問1<br />流れ図)
+    018002(` + getImgTag('UYIc0PUVlrg') + `問2<br />ビット反転操作)
+    018003(` + getImgTag('AhfYAODP1Vs') + `問3<br />隣接行列)
+    018004(` + getImgTag('tDhZfBqPmiI') + `問4<br />関数の極限)
+    018005(` + getImgTag('leXEopYDVps') + `問5<br />正規分布)
+    018006(` + getImgTag('JLz_E7wR7F4') + `問6<br />乱数の確率)
+    018007(` + getImgTag('UuMvP36eINU') + `問7<br />BNF)
+    018008(` + getImgTag('B2vsRqtpQrI') + `問8<br />スタック)
+    018009(` + getImgTag('snXJTi8K6Mg') + `問9<br />図解の回転)
+    018010(` + getImgTag('3DOemw-lU7U') + `問19<br />ハッシュ値の計算)
+    018011(` + getImgTag('mzCn7tgvcD0') + `問11<br />再帰関数の計算)
+    018012(` + getImgTag('CNS35iT5QRw') + `問12<br />CPUの平均命令回数)
+    018013(` + getImgTag('bd-YT68Mbm4') + `問13<br />CPU時間)
+    018014(` + getImgTag('IlIJ-NdDoGw') + `問14<br />デイジーチェーン接続)
+    018015(` + getImgTag('SX5la3h3HRo') + `問15<br />RAID)
+    018016(` + getImgTag('b6E1M0v0zhk') + `問16<br />装置の稼働率)
+    018017(` + getImgTag('Rj1mmdoyZoc') + `問17<br />バッファサイズ)
+    018018(` + getImgTag('WcF5793QGUc') + `問18<br />スケジューリングアルゴリズム)
+    018019(` + getImgTag('d5LPXU1rxdo') + `問19<br />バックアップ方式)
+    018020(` + getImgTag('fSbLCHbFkgU') + `問20<br />DRAM)
+    018021(` + getImgTag('cidL4qFiKOE') + `問21<br />シフトレジスタ)
+    018022(` + getImgTag('-7RmuAmdcwA') + `問22<br />論理回路)
+    018023(` + getImgTag('TCW2Na_NWGc') + `問23<br />コード体系)
+    018024(` + getImgTag('UO2JrTGA8t0') + `問24<br />H.264/MPEG-4 AVC)
+    018025(` + getImgTag('L6xBweST3gs') + `問25<br />概念データモデル)
+    018026(` + getImgTag('t9-LgNsBWK0') + `問26<br />SQL文)
+    018027(` + getImgTag('X7K7dn-czPQ') + `問27<br />関係演算)
+    018028(` + getImgTag('HGzQCAO-sCM') + `問28<br />トランザクション)
+    018029(` + getImgTag('nI_39ra-UIE') + `問29<br />デッドロック)
+    018030(` + getImgTag('rgnHolcq2Zo') + `問39<br />回線利用率)
+    018031(` + getImgTag('7TjAExhZiI8') + `問31<br />CSMA/CD)
+    018032(` + getImgTag('Ne-AYTYKJ28') + `問32<br />レイヤ3スイッチ)
+    018033(` + getImgTag('fZj8YVjco6A') + `問33<br />NAPT)
+    018034(` + getImgTag('tRs3NkfQrhk') + `問34<br />ポート番号)
+    018035(` + getImgTag('Icp6Xiirz4g') + `問35<br />DNSキャッシュポイズニング)
+    018036(` + getImgTag('zpC_lePwkAQ') + `問36<br />マルウェアの動的解析)
+    018037(` + getImgTag('kWU7DhD2AQM') + `問37<br />WPA3)
+    018038(` + getImgTag('l7Xj-y5wPak') + `問38<br />デジタル署名)
+    018039(` + getImgTag('sPgDw6JUTbc') + `問39<br />バックドア)
+    018040(` + getImgTag('PsPJtkRq4AU') + `問40<br />ファイルのハッシュ化)
+    018041(` + getImgTag('L3_ED9W0KfE') + `問41<br />検索結果の細工)
+    018042(` + getImgTag('iYYQrmxZXd8') + `問42<br />ファイアウォール)
+    018043(` + getImgTag('0RSJaJ-MYqA') + `問43<br />SIEM)
+    018044(` + getImgTag('1PvLBAvSISs') + `問44<br />メール送信の認証)
+    018045(` + getImgTag('CthS_gC_xFk') + `問45<br />DFD)
+    018046(` + getImgTag('wrh7M74n8TM') + `問46<br />モジュール結合)
+    018047(` + getImgTag('fKFX-SMWsP8') + `問47<br />エラー埋め込み法)
+    018048(` + getImgTag('it_DaxfQdEA') + `問48<br />スタブ<br />ドライバ)
+    018049(` + getImgTag('ctMIRX7bQlk') + `問49<br />命令網羅<br />条件判定網羅)
+    018050(` + getImgTag('Lnkpcosr-qM') + `問50<br />eXtreme Programming)
+    018051(` + getImgTag('JKFCPHoQ6Ds') + `問51<br />依存関係)
+    018052(` + getImgTag('nAzqDYka4qI') + `問52<br />アローダイアグラム)
+    018053(` + getImgTag('Hpp7bzTanpA') + `問53<br />ファンクションポイント法)
+    018054(` + getImgTag('S6F0qOEwgGc') + `問54<br />メンバの打ち合わせ回数)
+    018055(` + getImgTag('OxlOwP1XRoo') + `問55<br />PDCA)
+    018056(` + getImgTag('uzB1gVKSB24') + `問56<br />システムの移行計画)
+    018057(` + getImgTag('iK2bW80YwF0') + `問57<br />目標復旧時間)
+    018058(` + getImgTag('qF4_lcMfXdo') + `問58<br />システムテストの監査)
+    018059(` + getImgTag('3AHg2QKV6Bc') + `問59<br />システム監査人)
+    018060(` + getImgTag('ibI0HgdRDrA') + `問60<br />アクセス制御の監査)
+
+    900101(` + getImgTag('nc_wmot_Ha8') + `問1<br />セキュリティ)
+    900102(` + getImgTag('ziHhBrVlDAU') + `問2<br />ソフトウェア)
+    900103(` + getImgTag('lahUfnRucR4') + `問3<br />データベース)
+    900104(` + getImgTag('AanYxZYq9WU') + `問4<br />ネットワーク)
+    900105(` + getImgTag('IEFGJ-OAXx8') + `問5<br />ソフトウェア設計)
+    900106(` + getImgTag('O-RMnd1rZiI') + `問6<br />プロジェクトマネジメント)
+    900107(` + getImgTag('nbccY7WmmrQ') + `問7<br />経営戦略<br />企業と法務)
+    900108(` + getImgTag('-WZOJPDNFGY') + `問8<br />データ構造及び<br />アルゴリズム)
+    900109(` + getImgTag('XJjlcnzAhAU') + `問9<br />ソフトウェア開発<br />C)
+    900111(` + getImgTag('IgSayLt9QRc') + `問11<br />ソフトウェア開発<br />Java)
+    900112(` + getImgTag('6afI0mp3EHk') + `問12<br />ソフトウェア開発<br />アセンブラ)
+    900113(` + getImgTag('rrq1muYHikg') + `問13<br />ソフトウェア開発<br />表計算)
+
+    900201(` + getImgTag('yE0SaEsTSwc') + `問1<br />情報セキュリティ)
+    900202(` + getImgTag('dhqxHlgGrQk') + `問2<br />ソフトウェア)
+    900203(` + getImgTag('KwcZKrUHKmw') + `問3<br />データベース)
+    900204(` + getImgTag('me2qQlK_s3c') + `問4<br />ネットワーク)
+    900205(` + getImgTag('ApZlrtUyFDA') + `問5<br />ソフトウェア設計)
+    900206(` + getImgTag('oIU5SFplEKc') + `問6<br />プロジェクトマネジメント)
+    900207(` + getImgTag('R07eFckK38k') + `問7<br />システム戦略)
+    900208(` + getImgTag('0lMoznh-hgY') + `問8<br />データ構想及び<br />アルゴリズム)
+    900209(` + getImgTag('1QmvFFkOaC8') + `問9<br />ソフトウェア開発<br />C)
+    900211(` + getImgTag('hQWRiOrw3gQ') + `問11<br />ソフトウェア開発<br />Java)
+    900212(` + getImgTag('UiO7Ys33-kU') + `問12<br />ソフトウェア開発<br />アセンブラ)
+    900213(` + getImgTag('qVdG01B5euU') + `問13<br />ソフトウェア開発<br />表計算)
+
+    010101 --> B
+    010101 --> C
+    B --> 010102
+    B --> 010201
+    B --> 010301
+    B --> 010401
+    B --> 010501
+    B --> 010601
+    B --> 010701
+    B --> 010801
+    B --> 019901
+    B --> 018001
+    C --> 900101
+    C --> 900201
+    subgraph 午前試験対策
+    subgraph 午前試験勉強
+    subgraph テクノロジ系
+    subgraph 基礎理論
+    010102 --> 010103
+    010103 --> 010104
+    010104 --> 010105
+    010105 --> 010106
+    010106 --> 010107
+    010107 --> 010108
+    010108 --> 010410
+    end
+
+    subgraph アルゴリズム
+    010201 --> 010202
+    010202 --> 010203
+    010203 --> 010204
+    010204 --> 010205
+    010205 --> 010206
+    010206 --> 010207
+    010207 --> 010208
+    010208 --> 010209
+    010209 --> 010210
+    end
+
+    subgraph コンピュータの構成要素
+    010301 --> 010302
+    010302 --> 010303
+    010303 --> 010304
+    010304 --> 010305
+    010305 --> 010306
+    010306 --> 010307
+    010307 --> 010308
+    010308 --> 010309
+    010309 --> 010310
+    end
+
+    subgraph ソフトウェア
+    010401 --> 010402
+    010402 --> 010403
+    010403 --> 010404
+    010404 --> 010405
+    010405 --> 010406
+    010406 --> 010407
+    010407 --> 010408
+    010408 --> 010409
+    end
+
+    subgraph システム構成
+    010501 --> 010502
+    010502 --> 010503
+    end
+
+    subgraph データベース
+    010601 --> 010602
+    010602 --> 010603
+    010603 --> 010604
+    010604 --> 010605
+    010605 --> 010606
+    010606 --> 010607
+    010607 --> 010608
+    010608 --> 010609
+    end
+
+    subgraph ネットワーク
+    010701 --> 010702
+    010702 --> 010703
+    010703 --> 010704
+    010704 --> 010705
+    010705 --> 010706
+    010706 --> 010707
+    010707 --> 010708
+    010708 --> 010709
+    end
+
+    subgraph セキュリティ
+    010801 --> 010802
+    010802 --> 010803
+    010803 --> 010804
+    010804 --> 010805
+    010805 --> 010806
+    010806 --> 010807
+    end
+
+    end
+    end 
+    end
+
+
+    subgraph 午前過去問_令和元年秋
+    018001 --> 018002
+    018002 --> 018003
+    018003 --> 018004
+    018004 --> 018005
+    018005 --> 018006
+    018006 --> 018007
+    018007 --> 018008
+    018008 --> 018009
+    018009 --> 018010
+    018010 --> 018011
+    018011 --> 018012
+    018012 --> 018013
+    018013 --> 018014
+    018014 --> 018015
+    018015 --> 018016
+    018016 --> 018017
+    018017 --> 018018
+    018018 --> 018019
+    018019 --> 018020
+    018020 --> 018021
+    018021 --> 018022
+    018022 --> 018023
+    018023 --> 018024
+    018024 --> 018025
+    018025 --> 018026
+    018026 --> 018027
+    018027 --> 018028
+    018028 --> 018029
+    018029 --> 018030
+    018030 --> 018031
+    018031 --> 018032
+    018032 --> 018033
+    018033 --> 018034
+    018034 --> 018035
+    018035 --> 018036
+    018036 --> 018037
+    018037 --> 018038
+    018038 --> 018039
+    018039 --> 018040
+    018040 --> 018041
+    018041 --> 018042
+    018042 --> 018043
+    018043 --> 018044
+    018044 --> 018045
+    018045 --> 018046
+    018046 --> 018047
+    018047 --> 018048
+    018048 --> 018049
+    018049 --> 018050
+    018050 --> 018051
+    018051 --> 018052
+    018052 --> 018053
+    018053 --> 018054
+    018054 --> 018055
+    018055 --> 018056
+    018056 --> 018057
+    018057 --> 018058
+    018058 --> 018059
+    018059 --> 018060
+    end
+
+    subgraph 作戦と心構え
+    019901 --> 019902
+    019902 --> 019903
+    019903 --> 019904
+    019904 --> 019905
+    end
+
+    subgraph 午後問題練習
+    subgraph 令和元年秋
+    900101 --> 900102
+    900102 --> 900103
+    900103 --> 900104
+    900104 --> 900105
+    900105 --> 900106
+    900106 --> 900107
+    900107 --> 900108
+    900108 --> 900109
+    900109 --> 900111
+    900111 --> 900112
+    900112 --> 900113
+    end
+
+    subgraph 平成31年春
+    900201 --> 900202
+    900202 --> 900203
+    900203 --> 900204
+    900204 --> 900205
+    900205 --> 900206
+    900206 --> 900207
+    900207 --> 900208
+    900208 --> 900209
+    900209 --> 900211
+    900211 --> 900212
+    900212 --> 900213
+    end
+    end
+
+    style 午前試験対策 fill:#ffccee
+    `;
+      var graph = mermaidAPI.render("mermaid", graphDefinition, insertSvg);
+    };
+
+    $(document).on('click', 'img', function () {
+      var vclassname = $(this).attr('class');
+      var iframe_tag = getYouTubeTag(vclassname);
+      $('#marisa').html(iframe_tag);
+      $('#marisa').fadeIn(500);
+    });
+
+    $(document).on('click', '#marisa', function () {
+      $('#marisa').fadeOut(500);
+      $('#marisa').html('');
+    });
+
+
+    function getYouTubeTag(str_id){
+      return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + str_id + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+
+    function getImgTag(str_id){
+      return "<img src='https://img.youtube.com/vi/" + str_id + "/mqdefault.jpg' width='160' height='90' class='" + str_id + "'/><br />";
+    }
+  </script>
+
+
+
+</head>
+
+<body>
+  <div id="marisa" style="display:none;"></div>
+  サムネイルをYouTubeから直接持ってきているから、仕様変更とかあると、うまく表示できないかも。<br />
+  <div id="yukkuriFE"></div>
+</body>
+
+</html>
